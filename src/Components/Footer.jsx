@@ -1052,7 +1052,7 @@ const Footer = () => {
           >
             {[
               { label: 'Lines of Code', value: '80,000+', icon: '💻' },
-              { label: 'Coffee Cups', value: '500+', icon: '☕' },
+              { label: 'Coffee Cups', value: '200+', icon: '☕' },
               { label: 'Projects Built', value: '12+', icon: '🚀' },
               { label: 'Happy Clients', value: '100%', icon: '😊' }
             ].map((stat, index) => (
@@ -1080,7 +1080,7 @@ const Footer = () => {
           transition={{ delay: 0.8 }}
         >
           <div className="inline-flex gap-2 items-center px-4 py-2 bg-gradient-to-r rounded-full border backdrop-blur-sm from-blue-500/20 to-purple-500/20 border-blue-400/30">
-            <span className="text-sm text-blue-300">🚗 Watch the animated car cruise by</span>
+            <span className="text-sm text-blue-300">🚗 Watch the animated car cruise by </span>
           </div>
         </motion.div>
       </div>
