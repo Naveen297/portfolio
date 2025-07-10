@@ -9,7 +9,8 @@ pnpm-debug.log*
 build/
 dist/
 out/
-
+firebase
+firebase/
 # Environment variables
 .env
 .env.local

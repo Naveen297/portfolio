@@ -1,11 +1,11 @@
 // src/Components/BlogPage.jsx
 import React, { useState, useEffect } from 'react';
-import { db } from '../firebase/config';
+import { db } from '../../../firebase/config';
 import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, BookOpen, ArrowLeft } from 'lucide-react';
-import Footer from './Layout/Footer'; // Assuming you have a Footer component
+import Footer from '../../Layout/Footer'; // Assuming you have a Footer component
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);

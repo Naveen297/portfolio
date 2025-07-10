@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import projects from your existing data file
-import { projects as existingProjects } from '../Data/portfolioData';
+import { projects as existingProjects } from '../../Data/portfolioData';
 
 // Your personal side projects
 const personalProjects = [

@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import Navigation from './Layout/Navigation';
-import LoadingScreen from './Layout/LoadingScreen';
-import HeroSection from './HeroSection';
-import AboutSection from './AboutSection';
-import ExperienceSection from './ExperienceSection';
-import ProjectsSection from './ProjectsSection';
-import SkillsSection from './SkillsSection';
-import LinkedInPostsSection from './LinkedInPostsSection'; // ADD THIS IMPORT
-import ContactSection from './ContactSection';
-import Footer from './Layout/Footer';
-import '../Styles/portfolioStyles.css';
+import Navigation from '../../../Layout/Navigation';
+import LoadingScreen from '../../../Layout/LoadingScreen';
+import HeroSection from '../../../Sections/HeroSection';
+import AboutSection from '../../../Sections/AboutSection';
+import ExperienceSection from '../../../Sections/ExperienceSection';
+import ProjectsSection from '../../../Sections/ProjectsSection';
+import SkillsSection from '../../../Sections/SkillsSection';
+
+import ContactSection from '../../../Sections/ContactSection';
+import Footer from '../../../Layout/Footer';
+import '../../../../Styles/portfolioStyles.css';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');

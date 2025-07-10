@@ -2,8 +2,8 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer'; // Import the hook
 import { GraduationCap, Briefcase, Code, Database, Cloud, Brain, Zap } from 'lucide-react';
-import NMImg from '../assets/NM.jpg';
-import MMLogo from '../assets/mm.png';
+import NMImg from '../../assets/NM.jpg';
+import MMLogo from '../../assets/mm.png';
 
 const AboutSection = () => {
   // Create refs and inView states for each element you want to animate

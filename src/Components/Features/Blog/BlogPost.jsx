@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { db } from '../firebase/config';
+import { db } from '../../../firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Calendar, ArrowLeft, Clock, User } from 'lucide-react';
-import Footer from './Layout/Footer';
+import Footer from '../../Layout/Footer';
 
 const BlogPost = () => {
   const { id } = useParams();

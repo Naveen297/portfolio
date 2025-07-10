@@ -1,43 +1,13 @@
 
-
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Portfolio from './Components/Portfolio';
-// import LiveCodePlayground from './Components/LiveCodePlayground';
-
-
-// function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <Routes>
-//           {/* Main Portfolio Page */}
-//           <Route path="/" element={<Portfolio />} />
-          
-//           {/* Live Code Playground Page */}
-//           <Route path="/playground" element={<LiveCodePlayground />} />
-          
-//           {/* Catch all route - redirect to home */}
-//           <Route path="*" element={<Portfolio />} />
-
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Portfolio from './Components/Portfolio';
-import LiveCodePlayground from './Components/LiveCodePlayground';
+import Portfolio from './Components/Features/portfolio/components/Portfolio.jsx';
+import LiveCodePlayground from './Components/Features/tools/LiveCodePlayground.jsx';
 
 // --- ADD THESE IMPORTS ---
-import BlogPage from './Components/BlogPage';
-import BlogPost from './Components/BlogPost';
-import AdminPanel from './Components/AdminPanel';
+import BlogPage from './Components/Features/Blog/BlogPage.jsx';
+import BlogPost from './Components/Features/Blog/BlogPost.jsx';
+import AdminPanel from './Components/Features/Admin/AdminPanel.jsx';
 
 function App() {
   return (
