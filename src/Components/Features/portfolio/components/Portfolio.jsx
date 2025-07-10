@@ -8,7 +8,7 @@ import ExperienceSection from '../../../Sections/ExperienceSection';
 import ProjectsSection from '../../../Sections/ProjectsSection';
 import SkillsSection from '../../../Sections/SkillsSection';
 
-import ContactSection from '../../../Sections/ContactSection';
+import ContactSection from '../../../Sections/ContactSection/ContactSection';
 import Footer from '../../../Layout/Footer';
 import '../../../../Styles/portfolioStyles.css';
 
