@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Code, ExternalLink } from 'lucide-react';
-import TypewriterHeader from './TypewriterHeader';
-import WavingCreature from './WavingCreature';
-import GlowingLogo from './GlowingLogo';
+import TypewriterHeader from '../TypewriterHeader';
+import WavingCreature from '../WavingCreature';
+import GlowingLogo from '../GlowingLogo';
 
 const Navigation = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) => {
   const location = useLocation();

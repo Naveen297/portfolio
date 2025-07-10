@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import Navigation from './Navigation';
-import LoadingScreen from './LoadingScreen';
+import Navigation from './Layout/Navigation';
+import LoadingScreen from './Layout/LoadingScreen';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ExperienceSection from './ExperienceSection';
@@ -9,7 +9,7 @@ import ProjectsSection from './ProjectsSection';
 import SkillsSection from './SkillsSection';
 import LinkedInPostsSection from './LinkedInPostsSection'; // ADD THIS IMPORT
 import ContactSection from './ContactSection';
-import Footer from './Footer';
+import Footer from './Layout/Footer';
 import '../Styles/portfolioStyles.css';
 
 const Portfolio = () => {

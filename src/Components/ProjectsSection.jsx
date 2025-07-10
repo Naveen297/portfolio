@@ -4,14 +4,96 @@ import { useInView } from 'react-intersection-observer';
 import { 
   Zap, X, Bot, Shield, FileText, Users, Cloud, Award, 
   TrendingUp, Lock, Cpu, Brain, Database, Globe, 
-  CheckCircle, Star, Sparkles, Calendar, Building
+  CheckCircle, Star, Sparkles, Calendar, Building, Palette, Download, Moon, Type, Save
 } from 'lucide-react';
 
 // Import projects from your existing data file
 import { projects as existingProjects } from '../Data/portfolioData';
 
+// Your personal side projects
+const personalProjects = [
+  {
+    id: 'gradientforge-tool',
+    title: 'GradientForge',
+    tagline: 'Advanced CSS Gradient Generator & Design Tool',
+    subtitle: 'Live at gradientforge.netlify.app',
+    gradient: 'from-purple-500 via-pink-600 to-red-700',
+    icon: Palette,
+    userCount: 'Live Tool',
+    impact: 'Creative',
+    duration: '2 weeks',
+    complexity: 'Advanced UI',
+    liveUrl: 'https://gradientforge.netlify.app/',
+    tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'CSS3', 'HTML Canvas', 'Responsive Design', 'PWA'],
+    keyMetrics: [
+      { label: 'Features', value: '15+', icon: Star },
+      { label: 'Export Formats', value: '3', icon: Download },
+      { label: 'Presets', value: '6+', icon: Palette },
+      { label: 'Theme Modes', value: '2', icon: Moon }
+    ],
+    achievements: [
+      'Built comprehensive gradient design tool with real-time preview and editing',
+      'Implemented advanced color stop management with precise position controls',
+      'Created intelligent preset system with beautiful gradient combinations',
+      'Designed responsive interface supporting both linear and radial gradients',
+      'Built export functionality for PNG images using HTML5 Canvas API',
+      'Implemented dark/light theme switching with smooth transitions',
+      'Added save/load functionality with local storage persistence',
+      'Crafted pixel-perfect UI with modern glassmorphism design elements'
+    ],
+    tags: ['Design Tools', 'CSS Generator', 'Creative', 'Frontend'],
+    features: [
+      'Real-time gradient preview',
+      'Advanced color picker',
+      'Export as CSS/PNG',
+      'Preset gradient library',
+      'Dark/Light theme',
+      'Save/Load gradients'
+    ]
+  },
+  {
+    id: 'markdown-pro-editor',
+    title: 'Markdown Pro Editor',
+    tagline: 'Professional Markdown Editor with Live Preview',
+    subtitle: 'Live at markdownproeditor.netlify.app',
+    gradient: 'from-blue-500 via-cyan-600 to-teal-700',
+    icon: FileText,
+    userCount: 'Live Tool',
+    impact: 'Productivity',
+    duration: '3 weeks',
+    complexity: 'Full-Featured',
+    liveUrl: 'https://markdownproeditor.netlify.app/',
+    tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'Markdown Parser', 'File System API', 'Local Storage'],
+    keyMetrics: [
+      { label: 'Word Count', value: 'Live', icon: Type },
+      { label: 'Export Formats', value: '2', icon: Download },
+      { label: 'Templates', value: '4+', icon: FileText },
+      { label: 'Auto-Save', value: 'Yes', icon: Save }
+    ],
+    achievements: [
+      'Developed full-featured markdown editor with real-time HTML preview',
+      'Built custom markdown-to-HTML parser with syntax highlighting support',
+      'Implemented three viewing modes: Editor, Split-view, and Preview-only',
+      'Created comprehensive export system (HTML, Markdown) with styled output',
+      'Added intelligent auto-save functionality with localStorage persistence',
+      'Built quick-insert templates for tables, code blocks, lists, and quotes',
+      'Designed responsive interface with statistics tracking (word/character count)',
+      'Integrated file upload/download capabilities with drag-and-drop support'
+    ],
+    tags: ['Productivity', 'Text Editor', 'Markdown', 'Development Tools'],
+    features: [
+      'Live markdown preview',
+      'Split-screen editing',
+      'Export HTML/Markdown',
+      'Auto-save functionality',
+      'Word count statistics',
+      'Template insertion'
+    ]
+  }
+];
+
 // Your impressive Mahindra chatbot projects
-const newChatbotProjects = [
+const mahindraProjects = [
   {
     id: 'brd-generator-chatbot',
     title: 'BRD Generator AI Chatbot',
@@ -121,9 +203,10 @@ const enhanceExistingProjects = (projects) => {
   }));
 };
 
-// Combine projects
+// Combine projects - PERSONAL PROJECTS FIRST!
 const projects = [
-  ...newChatbotProjects,
+  ...personalProjects,
+  ...mahindraProjects,
   ...enhanceExistingProjects(existingProjects)
 ];
 
@@ -148,7 +231,9 @@ const ProjectsSection = () => {
   const impactColors = {
     'High': 'text-blue-400',
     'Critical': 'text-orange-400',
-    'Mission Critical': 'text-red-400'
+    'Mission Critical': 'text-red-400',
+    'Creative': 'text-purple-400',
+    'Productivity': 'text-green-400'
   };
 
   return (
@@ -176,7 +261,7 @@ const ProjectsSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <Building className="w-4 h-4 text-purple-400" />
-            {/* <span className="text-sm font-medium text-purple-200">Mahindra Group Projects</span> */}
+            <span className="text-sm font-medium text-purple-200">Featured Projects</span>
             <Star className="w-4 h-4 text-yellow-400" />
           </motion.div>
 
@@ -195,7 +280,8 @@ const ProjectsSection = () => {
             animate={{ opacity: sectionInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Revolutionary AI-powered enterprise solutions developed during my tenure at Mahindra Group. 
+            Revolutionary AI-powered enterprise solutions developed during my tenure at Mahindra Group, 
+            plus innovative personal projects showcasing modern web development expertise. 
             These production-grade systems serve <span className="font-semibold text-cyan-400">150K+ users</span> across 
             multiple manufacturing plants with enterprise-level security and scalability.
           </motion.p>
@@ -213,8 +299,8 @@ const ProjectsSection = () => {
             </div>
             <div className="w-px h-12 bg-gray-700"></div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-400">3</div>
-              <div className="text-sm text-gray-400">AI Systems</div>
+              <div className="text-2xl font-bold text-purple-400">{projects.length}</div>
+              <div className="text-sm text-gray-400">Projects</div>
             </div>
             <div className="w-px h-12 bg-gray-700"></div>
             <div className="text-center">
@@ -271,6 +357,18 @@ const ProjectsSection = () => {
                   </h3>
                   <p className="mb-1 text-sm text-gray-400">{project.tagline}</p>
                   <p className="text-xs font-medium text-purple-300">{project.subtitle}</p>
+                  {project.liveUrl && (
+                    <a 
+                      href={project.liveUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex gap-1 items-center mt-1 text-xs font-medium text-blue-400 transition-colors hover:text-blue-300"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Globe className="w-3 h-3" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                 </div>
 
                 {/* Key Metrics */}
@@ -376,6 +474,17 @@ const ProjectsSection = () => {
                     <span className={`px-3 py-1 text-xs font-bold ${impactColors[selectedProject.impact]} bg-gray-800/50 rounded-full border border-current/30`}>
                       {selectedProject.impact}
                     </span>
+                    {selectedProject.liveUrl && (
+                      <a 
+                        href={selectedProject.liveUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex gap-2 items-center px-3 py-1 text-xs font-bold text-blue-300 rounded-full border transition-colors bg-blue-900/50 border-blue-500/30 hover:bg-blue-800/50"
+                      >
+                        <Globe className="w-3 h-3" />
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                   <p className="mb-2 text-xl text-gray-300">{selectedProject.tagline}</p>
                   <p className="mb-4 text-sm font-medium text-purple-300">{selectedProject.subtitle}</p>
@@ -434,6 +543,26 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
+              {/* Project Features (for personal projects) */}
+              {selectedProject.features && (
+                <div className="mb-8">
+                  <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400">
+                    <Star className="w-5 h-5" />
+                    Key Features
+                  </h3>
+                  <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                    {selectedProject.features.map((feature, i) => (
+                      <div key={i} className="flex gap-3 items-center p-3 rounded-xl border bg-gray-800/30 border-gray-700/50">
+                        <div className="p-2 rounded-lg border bg-green-900/30 border-green-700/30">
+                          <CheckCircle className="w-4 h-4 text-green-400" />
+                        </div>
+                        <span className="text-sm text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Project Tags */}
               <div className="mb-6">
                 <h3 className="flex gap-2 items-center mb-3 text-lg font-semibold text-cyan-400">
@@ -449,15 +578,17 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Confidentiality Notice */}
-              <div className="p-4 mt-8 rounded-xl border bg-orange-900/20 border-orange-700/30">
-                <div className="flex gap-3 items-center">
-                  <Lock className="w-5 h-5 text-orange-400" />
-                  <span className="text-sm font-medium text-orange-300">
-                    Proprietary Mahindra Group Project - Technical details limited due to confidentiality
-                  </span>
+              {/* Confidentiality Notice - only for Mahindra projects */}
+              {selectedProject.subtitle?.includes('Mahindra') && (
+                <div className="p-4 mt-8 rounded-xl border bg-orange-900/20 border-orange-700/30">
+                  <div className="flex gap-3 items-center">
+                    <Lock className="w-5 h-5 text-orange-400" />
+                    <span className="text-sm font-medium text-orange-300">
+                      Proprietary Mahindra Group Project - Technical details limited due to confidentiality
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
             </motion.div>
 
             <motion.div
