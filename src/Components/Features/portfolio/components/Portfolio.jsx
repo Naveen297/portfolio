@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import Navigation from '../../../Layout/Navigation';
 import LoadingScreen from '../../../Layout/LoadingScreen';
 import HeroSection from '../../../Sections/HeroSection';
-import AboutSection from '../../../Sections/AboutSection';
+import AboutSection from '../../../Sections/AboutSection/AboutSection';
 import ExperienceSection from '../../../Sections/ExperienceSection';
 import ProjectsSection from '../../../Sections/ProjectsSection';
 import SkillsSection from '../../../Sections/SkillsSection';
