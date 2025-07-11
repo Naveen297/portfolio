@@ -4,10 +4,10 @@ import Navigation from '../../../Layout/Navigation';
 import LoadingScreen from '../../../Layout/LoadingScreen';
 import HeroSection from '../../../Sections/HeroSection';
 import AboutSection from '../../../Sections/AboutSection/AboutSection';
-import ExperienceSection from '../../../Sections/ExperienceSection';
+import ExperienceSection from '../../../Sections/ExperienceSection/ExperienceSection';
 import ProjectsSection from '../../../Sections/ProjectsSection';
 import SkillsSection from '../../../Sections/SkillsSection';
-
+import GlowingCursor from './GlowingCursor';
 import ContactSection from '../../../Sections/ContactSection/ContactSection';
 import Footer from '../../../Layout/Footer';
 import '../../../../Styles/portfolioStyles.css';
@@ -157,6 +157,7 @@ const Portfolio = () => {
   return (
     <div className="overflow-x-hidden relative min-h-screen text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       {/* Simplified background elements */}
+
       <div className="overflow-hidden fixed inset-0 opacity-50 pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br rounded-full blur-3xl from-cyan-500/20 to-blue-500/20"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br rounded-full blur-3xl from-purple-500/20 to-pink-500/20"></div>

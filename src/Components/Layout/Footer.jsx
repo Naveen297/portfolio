@@ -647,7 +647,7 @@ const Footer = () => {
             
             {/* Copyright */}
             <div className="flex gap-2 items-center text-gray-300">
-              <span>© 2024 Naveen Malhotra.</span>
+              <span>© 2025 Naveen Malhotra.</span>
               <motion.div
                 className="flex gap-1 items-center"
                 whileHover={{ scale: 1.1 }}
@@ -724,6 +724,7 @@ const Footer = () => {
 
       {/* Bottom Glow Effect */}
       <div className="absolute bottom-0 left-1/2 w-96 h-32 bg-gradient-to-t to-transparent blur-3xl transform -translate-x-1/2 from-cyan-500/10"></div>
+      {/* <p className='flex justify-center text-xs'>||297||</p> */}
     </footer>
   );
 };
