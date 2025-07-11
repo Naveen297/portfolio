@@ -9,8 +9,7 @@ pnpm-debug.log*
 build/
 dist/
 out/
-firebase
-firebase/
+
 # Environment variables
 .env
 .env.local
@@ -108,7 +107,7 @@ logs
 ehthumbs.db
 Thumbs.db
 
-# # Firebase
+# Firebase
 # .firebase/
 
 # Vercel
