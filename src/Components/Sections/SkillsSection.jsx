@@ -337,7 +337,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section ref={ref} className="overflow-hidden relative py-32 text-white bg-gray-900 font-georama">
+    <section ref={ref} className="overflow-hidden relative py-32 text-white bg-gray-900 font-geormama">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute left-10 top-20 w-96 h-96 rounded-full blur-3xl bg-purple-500/30"></div>

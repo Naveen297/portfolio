@@ -191,7 +191,7 @@ const AdminPanel = () => {
   }
 
   return (
-    <div className="p-4 min-h-screen text-white bg-gray-900 sm:p-8 font-georama">
+    <div className="p-4 min-h-screen text-white bg-gray-900 sm:p-8 font-geormama">
       <div className="container mx-auto max-w-4xl">
         <header className="flex justify-between items-center mb-12">
           <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">

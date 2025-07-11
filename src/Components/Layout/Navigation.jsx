@@ -34,7 +34,7 @@ const Navigation = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen 
   ];
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-40 border-b backdrop-blur-xl bg-gray-900/95 border-gray-700/30 font-georamalight">
+    <nav className="fixed top-0 right-0 left-0 z-40 border-b backdrop-blur-xl bg-gray-900/95 border-gray-700/30 font-geormama">
       <div className="container px-6 py-4 mx-auto">
         <div className="flex justify-between items-center">
           {/* Glowing Logo + Typewriter Header */}

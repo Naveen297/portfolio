@@ -242,7 +242,7 @@ const LinkedInPostsSection = () => {
   const postTypes = ['all', 'project', 'learning', 'achievement', 'opinion', 'announcement'];
 
   return (
-    <section ref={ref} className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 font-georama">
+    <section ref={ref} className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 font-geormama">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute left-10 top-20 w-32 h-32 bg-gradient-to-br rounded-full blur-xl from-cyan-500/30 to-blue-500/30 animate-float-slow"></div>

@@ -199,7 +199,7 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen text-white bg-gray-900 font-georama">
+    <div className="min-h-screen text-white bg-gray-900 font-geormama">
       {/* Background decorative elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute left-10 top-20 w-32 h-32 bg-gradient-to-br rounded-full blur-2xl from-cyan-500/10 to-blue-500/10 animate-float-slow"></div>

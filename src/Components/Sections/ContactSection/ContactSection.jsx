@@ -8,7 +8,7 @@ import ContactForm from './ContactForm';
 // The main contact section component that assembles everything
 const ContactSection = () => {
     return (
-        <section className="overflow-hidden relative py-32 bg-gray-900 font-georama">
+        <section className="overflow-hidden relative py-32 bg-gray-900 font-geormama">
             <div className="container px-6 mx-auto">
                 <motion.h2 
                     className="mb-12 text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 md:text-6xl [text-shadow:0_0_30px_rgba(168,85,247,0.5)]"

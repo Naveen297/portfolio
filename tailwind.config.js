@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         georama: ["Georama", "sans-serif"],
         georamalight: ["GEORAMALight","sans-serif"],
+        geormama: ["Georama", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
         ralewaybold: ["RALEWAYBold", "sans-serif"],
         kanitBold: ["KANITBold", "sans-serif"],

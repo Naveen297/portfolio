@@ -27,7 +27,7 @@ const AboutSection = () => {
           inView={inViewStates.titleInView}
         />
 
-        <div className="grid gap-12 items-start mb-16 lg:grid-cols-2 font-georamalight">
+        <div className="grid gap-12 items-start mb-16 lg:grid-cols-2 font-geormama">
           <ProfileCard 
             ref={refs.profileCardRef}
             data={profileData}

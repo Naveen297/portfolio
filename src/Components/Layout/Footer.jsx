@@ -529,7 +529,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="overflow-hidden relative bg-gradient-to-t from-gray-900 via-gray-800 to-gray-900 border-t border-gray-700/50 font-georamalight">
+    <footer className="overflow-hidden relative bg-gradient-to-t from-gray-900 via-gray-800 to-gray-900 border-t border-gray-700/50 font-geormama">
       {/* 3D Background with Car */}
       <div className="absolute inset-0 opacity-60">
         <Canvas 

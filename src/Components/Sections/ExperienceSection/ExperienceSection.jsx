@@ -56,7 +56,7 @@ const ExperienceSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="overflow-hidden relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 font-georama">
+    <section ref={sectionRef} className="overflow-hidden relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 font-geormama">
       
       <div className="absolute inset-0 opacity-30">
         <Canvas 

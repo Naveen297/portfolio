@@ -266,7 +266,7 @@ const ProjectsSection = () => {
           </motion.div>
 
           <motion.h2 
-            className="mb-6 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 md:text-7xl [text-shadow:0_0_30px_rgba(168,85,247,0.6)] font-georama"
+            className="mb-6 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 md:text-7xl [text-shadow:0_0_30px_rgba(168,85,247,0.6)] font-geormama"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: sectionInView ? 1 : 0.8, opacity: sectionInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -275,7 +275,7 @@ const ProjectsSection = () => {
           </motion.h2>
           
           <motion.p 
-            className="mx-auto max-w-4xl text-xl leading-relaxed text-gray-300 font-georamalight"
+            className="mx-auto max-w-4xl text-xl leading-relaxed text-gray-300 font-geormama"
             initial={{ opacity: 0 }}
             animate={{ opacity: sectionInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -311,7 +311,7 @@ const ProjectsSection = () => {
         </div>
         
         {/* Enhanced Project Cards Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-georamalight">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 font-geormama">
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             const isHovered = hoveredProject === project.id;
@@ -444,7 +444,7 @@ const ProjectsSection = () => {
         {selectedProject && (
           <motion.div
             layoutId={selectedProject.id}
-            className="flex fixed inset-0 z-50 justify-center items-center p-4 font-georamalight"
+            className="flex fixed inset-0 z-50 justify-center items-center p-4 font-geormama"
           >
             <motion.div 
               initial={{ opacity: 0.8, scale: 0.85 }}

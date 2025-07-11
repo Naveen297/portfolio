@@ -10,7 +10,7 @@ const iconMap = {
 
 const TechStackGrid = ({ titleRef, gridRef, titleInView, gridInView, data }) => {
   return (
-    <div className="mb-16 text-center font-georamalight">
+    <div className="mb-16 text-center font-geormama">
       <h3
         ref={titleRef}
         className={`mb-8 text-4xl md:text-4xl font-bold text-white transition-all duration-700 ease-out ${titleInView ? 'opacity-100' : 'opacity-0'}`}

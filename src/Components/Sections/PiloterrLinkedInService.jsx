@@ -248,7 +248,7 @@ class PiloterrLinkedInService {
     const postTypes = ['all', 'project', 'learning', 'achievement', 'opinion', 'announcement'];
   
     return (
-      <section ref={ref} className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 font-georama">
+      <section ref={ref} className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 font-geormama">
         {/* Your existing JSX with the following changes: */}
         
         {/* Add refresh button */}

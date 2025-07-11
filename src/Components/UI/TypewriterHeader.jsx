@@ -59,7 +59,7 @@ const TypewriterHeader = () => {
     <div className="typewriter-container">
       <div className="typewriter-background-glow"></div>
       <div className="typewriter-text">
-        <span className="typed-text font-georamalight">{displayText}</span>
+        <span className="typed-text font-geormama">{displayText}</span>
         <span className={`cursor ${cursorVisible ? 'visible' : 'hidden'}`}>|</span>
       </div>
       <div className="typewriter-underline"></div>

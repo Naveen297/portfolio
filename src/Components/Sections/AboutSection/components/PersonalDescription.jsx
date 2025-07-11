@@ -4,7 +4,7 @@ const PersonalDescription = forwardRef(({ data, inView }, ref) => {
   return (
     <div
       ref={ref}
-      className={`mx-auto max-w-4xl text-center transition-all duration-700 ease-out font-georama ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+      className={`mx-auto max-w-4xl text-center transition-all duration-700 ease-out font-geormama ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
     >
       <div className="relative group">
         <div className="absolute inset-0 bg-gradient-to-r rounded-3xl blur-2xl transition-all duration-500 from-cyan-500/10 to-purple-500/10 group-hover:blur-3xl"></div>

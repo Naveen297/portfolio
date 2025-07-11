@@ -68,7 +68,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen text-white bg-gray-900 font-georama">
+    <div className="min-h-screen text-white bg-gray-900 font-geormama">
       <div className="relative pt-32 pb-20">
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
