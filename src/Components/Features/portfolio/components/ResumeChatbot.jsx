@@ -22,7 +22,7 @@ import { resumeData } from "./resumeData.js"; // ← update path if required
 // ⚠️  SECURITY NOTE ---------------------------------------------------------
 // Hard‑coding API keys in the frontend is NOT recommended for production.
 // Replace with a secure serverless function / proxy in real deployments.
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_KEY || "AIzaSyAbyGY7fCoGSObeeUZE80OGfHJmhLNdNuw";
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 let model = null;
 try {
