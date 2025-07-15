@@ -147,7 +147,8 @@ const HeroSection = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 z-10 animate-bounce transform -translate-x-1/2">
+      {/* FIXED: Enhanced centering for ChevronDown with better mobile support */}
+      <div className="flex absolute right-0 left-0 bottom-10 z-10 justify-center animate-bounce">
         <div className="p-2 rounded-full border backdrop-blur-md bg-cyan-500/20 border-cyan-400/30">
           <ChevronDown className="w-6 h-6 text-cyan-300" />
         </div>

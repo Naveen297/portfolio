@@ -14,8 +14,8 @@ const ExperienceCard = forwardRef(({ data, inView }, ref) => {
       
       <div className="relative p-6 bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-xl border border-gray-600/50 rounded-2xl transition-all duration-500 hover:[transform:perspective(1000px)_rotateX(5deg)_rotateY(-5deg)_translateZ(30px)] [transform-style:preserve-3d] hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/25">
         
-        {/* Company Logo */}
-        <div className="absolute top-4 right-4 [transform:translateZ(25px)]">
+        {/* FIXED: Responsive Company Logo - absolute on desktop, relative on mobile */}
+        <div className="absolute top-4 right-4 hidden sm:block [transform:translateZ(25px)]">
           <div className="w-28 h-12 bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-gray-500/30 hover:[transform:translateZ(10px)_scale(1.1)] transition-all duration-300 hover:border-orange-400/50 hover:shadow-lg hover:shadow-orange-500/25">
             <img 
               src={MMLogo} 
@@ -31,6 +31,17 @@ const ExperienceCard = forwardRef(({ data, inView }, ref) => {
           </div>
           
           <div className="flex-1">
+            {/* ADDED: Mobile logo placement - shows below the main content on mobile */}
+            <div className="block mb-3 sm:hidden">
+              <div className="p-1 w-20 h-8 rounded-lg border backdrop-blur-sm transition-all duration-300 bg-white/10 border-gray-500/30 hover:border-orange-400/50 hover:shadow-lg hover:shadow-orange-500/25">
+                <img 
+                  src={MMLogo} 
+                  alt="Mahindra Logo" 
+                  className="object-contain w-full h-full filter brightness-110" 
+                />
+              </div>
+            </div>
+            
             <div className="mb-3">
               <h3 className="mb-1 text-xl font-bold text-orange-400 transition-colors duration-300 hover:text-orange-300">
                 Current Role
