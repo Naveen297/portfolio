@@ -242,20 +242,20 @@ const ProjectsSection = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 50 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="overflow-hidden relative py-32 bg-gray-900"
+      className="relative py-32 overflow-hidden bg-gray-900"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full opacity-20 mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-cyan-500 rounded-full opacity-20 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full opacity-20 mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-0 bg-purple-500 rounded-full -left-4 w-72 h-72 opacity-20 mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div className="absolute top-0 rounded-full -right-4 w-72 h-72 bg-cyan-500 opacity-20 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bg-pink-500 rounded-full -bottom-8 left-20 w-72 h-72 opacity-20 mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container relative z-10 px-6 mx-auto">
         {/* Enhanced Header */}
         <div className="mb-24 text-center">
           <motion.div
-            className="inline-flex gap-2 items-center px-4 py-2 mb-6 bg-gradient-to-r rounded-full border from-purple-900/50 to-blue-900/50 border-purple-500/30"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full bg-gradient-to-r from-purple-900/50 to-blue-900/50 border-purple-500/30"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -275,7 +275,7 @@ const ProjectsSection = () => {
           </motion.h2>
           
           <motion.p 
-            className="mx-auto max-w-4xl text-xl leading-relaxed text-gray-300 font-geormama"
+            className="max-w-4xl mx-auto text-xl leading-relaxed text-gray-300 font-geormama"
             initial={{ opacity: 0 }}
             animate={{ opacity: sectionInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -288,7 +288,7 @@ const ProjectsSection = () => {
 
           {/* Stats Bar */}
           <motion.div 
-            className="flex flex-wrap gap-8 justify-center items-center mt-8"
+            className="flex flex-wrap items-center justify-center gap-8 mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 20 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -326,24 +326,24 @@ const ProjectsSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative p-6 rounded-3xl border backdrop-blur-sm transition-all duration-500 cursor-pointer border-gray-700/50 group bg-gray-800/30 hover:border-cyan-500/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cyan-500/20"
+                className="relative p-6 transition-all duration-500 border cursor-pointer rounded-3xl backdrop-blur-sm border-gray-700/50 group bg-gray-800/30 hover:border-cyan-500/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cyan-500/20"
               >
                 {/* Gradient Border */}
                 <div className={`absolute top-0 left-0 h-2 w-full bg-gradient-to-r ${project.gradient} rounded-t-3xl`}></div>
                 
                 {/* Project Header */}
-                <div className="flex justify-between items-start mb-4">
+                <div className="flex items-start justify-between mb-4">
                   <div className={`p-4 rounded-2xl bg-gradient-to-br ${project.gradient} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
-                    <IconComponent className="w-7 h-7 text-white" />
+                    <IconComponent className="text-white w-7 h-7" />
                   </div>
                   <div className="text-right">
-                    <div className="flex gap-2 items-center mb-1">
+                    <div className="flex items-center gap-2 mb-1">
                       <span className={`text-xs font-bold ${impactColors[project.impact] || 'text-blue-400'}`}>
                         {project.impact}
                       </span>
                       <Sparkles className="w-3 h-3 text-yellow-400" />
                     </div>
-                    <div className="flex gap-1 items-center text-xs text-gray-400">
+                    <div className="flex items-center gap-1 text-xs text-gray-400">
                       <Calendar className="w-3 h-3" />
                       <span>{project.duration}</span>
                     </div>
@@ -362,7 +362,7 @@ const ProjectsSection = () => {
                       href={project.liveUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex gap-1 items-center mt-1 text-xs font-medium text-blue-400 transition-colors hover:text-blue-300"
+                      className="inline-flex items-center gap-1 mt-1 text-xs font-medium text-blue-400 transition-colors hover:text-blue-300"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Globe className="w-3 h-3" />
@@ -374,8 +374,8 @@ const ProjectsSection = () => {
                 {/* Key Metrics */}
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   {project.keyMetrics?.slice(0, 2).map((metric, i) => (
-                    <div key={i} className="p-3 rounded-xl border bg-gray-700/30 border-gray-600/30">
-                      <div className="flex gap-2 items-center">
+                    <div key={i} className="p-3 border rounded-xl bg-gray-700/30 border-gray-600/30">
+                      <div className="flex items-center gap-2">
                         <metric.icon className="w-4 h-4 text-cyan-400" />
                         <span className="text-xs text-gray-400">{metric.label}</span>
                       </div>
@@ -387,12 +387,12 @@ const ProjectsSection = () => {
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech?.slice(0, 3).map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs font-semibold text-cyan-200 rounded-full border border-gray-600/50 bg-gray-700/50">
+                    <span key={tech} className="px-3 py-1 text-xs font-semibold border rounded-full text-cyan-200 border-gray-600/50 bg-gray-700/50">
                       {tech}
                     </span>
                   ))}
                   {project.tech?.length > 3 && (
-                    <span className="px-3 py-1 text-xs font-semibold text-purple-200 rounded-full border border-purple-600/50 bg-purple-700/50">
+                    <span className="px-3 py-1 text-xs font-semibold text-purple-200 border rounded-full border-purple-600/50 bg-purple-700/50">
                       +{project.tech.length - 3}
                     </span>
                   )}
@@ -401,7 +401,7 @@ const ProjectsSection = () => {
                 {/* Project Tags */}
                 <div className="flex flex-wrap gap-1">
                   {project.tags?.slice(0, 2).map((tag) => (
-                    <span key={tag} className="px-2 py-1 text-xs text-yellow-300 rounded-md border bg-yellow-900/30 border-yellow-700/30">
+                    <span key={tag} className="px-2 py-1 text-xs text-yellow-300 border rounded-md bg-yellow-900/30 border-yellow-700/30">
                       {tag}
                     </span>
                   ))}
@@ -409,13 +409,13 @@ const ProjectsSection = () => {
 
                 {/* Hover Effects */}
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br rounded-3xl opacity-0 transition-opacity duration-500 from-cyan-500/5 to-purple-500/5 group-hover:opacity-100"
+                  className="absolute inset-0 transition-opacity duration-500 opacity-0 bg-gradient-to-br rounded-3xl from-cyan-500/5 to-purple-500/5 group-hover:opacity-100"
                   animate={isHovered ? { scale: [1, 1.02, 1] } : {}}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
                 
                 {/* Pulse Effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r rounded-3xl opacity-0 blur transition-opacity duration-500 from-cyan-500/20 to-purple-500/20 group-hover:opacity-100"></div>
+                <div className="absolute transition-opacity duration-500 opacity-0 -inset-1 bg-gradient-to-r rounded-3xl blur from-cyan-500/20 to-purple-500/20 group-hover:opacity-100"></div>
               </motion.div>
             );
           })}
@@ -428,7 +428,7 @@ const ProjectsSection = () => {
           animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <div className="inline-flex gap-4 items-center px-8 py-4 bg-gradient-to-r rounded-2xl border backdrop-blur-sm from-purple-900/50 to-blue-900/50 border-purple-500/30">
+          <div className="inline-flex items-center gap-4 px-8 py-4 border bg-gradient-to-r rounded-2xl backdrop-blur-sm from-purple-900/50 to-blue-900/50 border-purple-500/30">
             <Award className="w-6 h-6 text-purple-400" />
             <div className="text-left">
               <div className="text-sm font-bold text-white">Complete Development Ownership</div>
@@ -444,7 +444,7 @@ const ProjectsSection = () => {
         {selectedProject && (
           <motion.div
             layoutId={selectedProject.id}
-            className="flex fixed inset-0 z-50 justify-center items-center p-4 font-geormama"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 font-geormama"
           >
             <motion.div 
               initial={{ opacity: 0.8, scale: 0.85 }}
@@ -457,19 +457,19 @@ const ProjectsSection = () => {
               
               <motion.button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 z-10 p-3 text-gray-400 rounded-2xl backdrop-blur-sm transition-colors bg-gray-800/80 hover:text-white"
+                className="absolute z-10 p-3 text-gray-400 transition-colors top-6 right-6 rounded-2xl backdrop-blur-sm bg-gray-800/80 hover:text-white"
                 whileHover={{ scale: 1.1, rotate: 90 }}
               >
                 <X className="w-5 h-5" />
               </motion.button>
               
               {/* Enhanced Project Header */}
-              <div className="flex gap-6 items-start mb-8">
+              <div className="flex items-start gap-6 mb-8">
                 <div className={`p-6 rounded-2xl bg-gradient-to-br ${selectedProject.gradient} shadow-2xl`}>
                   <selectedProject.icon className="w-12 h-12 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex gap-3 items-center mb-2">
+                  <div className="flex items-center gap-3 mb-2">
                     <h2 className="text-4xl font-bold text-white">{selectedProject.title}</h2>
                     <span className={`px-3 py-1 text-xs font-bold ${impactColors[selectedProject.impact]} bg-gray-800/50 rounded-full border border-current/30`}>
                       {selectedProject.impact}
@@ -479,7 +479,7 @@ const ProjectsSection = () => {
                         href={selectedProject.liveUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex gap-2 items-center px-3 py-1 text-xs font-bold text-blue-300 rounded-full border transition-colors bg-blue-900/50 border-blue-500/30 hover:bg-blue-800/50"
+                        className="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-blue-300 transition-colors border rounded-full bg-blue-900/50 border-blue-500/30 hover:bg-blue-800/50"
                       >
                         <Globe className="w-3 h-3" />
                         Live Demo
@@ -492,8 +492,8 @@ const ProjectsSection = () => {
                   {/* Enhanced Metrics Grid */}
                   <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                     {selectedProject.keyMetrics?.map((metric, i) => (
-                      <div key={i} className="p-4 rounded-xl border bg-gray-800/50 border-gray-600/30">
-                        <div className="flex gap-2 items-center mb-2">
+                      <div key={i} className="p-4 border rounded-xl bg-gray-800/50 border-gray-600/30">
+                        <div className="flex items-center gap-2 mb-2">
                           <metric.icon className="w-5 h-5 text-cyan-400" />
                           <span className="text-xs text-gray-400">{metric.label}</span>
                         </div>
@@ -506,13 +506,13 @@ const ProjectsSection = () => {
               
               {/* Enhanced Tech Stack */}
               <div className="mb-8">
-                <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400">
+                <h3 className="flex items-center gap-2 mb-4 text-xl font-semibold text-cyan-400">
                   <Cpu className="w-5 h-5" />
                   Technology Stack
                 </h3>
                 <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                   {selectedProject.tech?.map((tech) => (
-                    <div key={tech} className="px-4 py-3 text-sm font-semibold text-center text-purple-200 rounded-xl border border-purple-700/50 bg-purple-900/30">
+                    <div key={tech} className="px-4 py-3 text-sm font-semibold text-center text-purple-200 border rounded-xl border-purple-700/50 bg-purple-900/30">
                       {tech}
                     </div>
                   ))}
@@ -521,7 +521,7 @@ const ProjectsSection = () => {
 
               {/* Enhanced Achievements */}
               <div className="mb-8">
-                <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400">
+                <h3 className="flex items-center gap-2 mb-4 text-xl font-semibold text-cyan-400">
                   <Brain className="w-5 h-5" />
                   Key Achievements & Technical Excellence
                 </h3>
@@ -532,9 +532,9 @@ const ProjectsSection = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                      className="flex gap-4 items-start p-4 text-gray-300 rounded-xl border border-gray-700/50 bg-gray-800/30"
+                      className="flex items-start gap-4 p-4 text-gray-300 border rounded-xl border-gray-700/50 bg-gray-800/30"
                     >
-                      <div className="p-2 rounded-lg border bg-yellow-900/30 border-yellow-700/30">
+                      <div className="p-2 border rounded-lg bg-yellow-900/30 border-yellow-700/30">
                         <Zap className="w-4 h-4 text-yellow-400" />
                       </div>
                       <span className="text-sm leading-relaxed">{achievement}</span>
@@ -546,14 +546,14 @@ const ProjectsSection = () => {
               {/* Project Features (for personal projects) */}
               {selectedProject.features && (
                 <div className="mb-8">
-                  <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400">
+                  <h3 className="flex items-center gap-2 mb-4 text-xl font-semibold text-cyan-400">
                     <Star className="w-5 h-5" />
                     Key Features
                   </h3>
                   <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                     {selectedProject.features.map((feature, i) => (
-                      <div key={i} className="flex gap-3 items-center p-3 rounded-xl border bg-gray-800/30 border-gray-700/50">
-                        <div className="p-2 rounded-lg border bg-green-900/30 border-green-700/30">
+                      <div key={i} className="flex items-center gap-3 p-3 border rounded-xl bg-gray-800/30 border-gray-700/50">
+                        <div className="p-2 border rounded-lg bg-green-900/30 border-green-700/30">
                           <CheckCircle className="w-4 h-4 text-green-400" />
                         </div>
                         <span className="text-sm text-gray-300">{feature}</span>
@@ -565,13 +565,13 @@ const ProjectsSection = () => {
 
               {/* Project Tags */}
               <div className="mb-6">
-                <h3 className="flex gap-2 items-center mb-3 text-lg font-semibold text-cyan-400">
+                <h3 className="flex items-center gap-2 mb-3 text-lg font-semibold text-cyan-400">
                   <Database className="w-4 h-4" />
                   Project Categories
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {selectedProject.tags?.map((tag) => (
-                    <span key={tag} className="px-4 py-2 text-sm font-medium text-yellow-300 rounded-xl border bg-yellow-900/30 border-yellow-700/30">
+                    <span key={tag} className="px-4 py-2 text-sm font-medium text-yellow-300 border rounded-xl bg-yellow-900/30 border-yellow-700/30">
                       {tag}
                     </span>
                   ))}
@@ -580,8 +580,8 @@ const ProjectsSection = () => {
 
               {/* Confidentiality Notice - only for Mahindra projects */}
               {selectedProject.subtitle?.includes('Mahindra') && (
-                <div className="p-4 mt-8 rounded-xl border bg-orange-900/20 border-orange-700/30">
-                  <div className="flex gap-3 items-center">
+                <div className="p-4 mt-8 border rounded-xl bg-orange-900/20 border-orange-700/30">
+                  <div className="flex items-center gap-3">
                     <Lock className="w-5 h-5 text-orange-400" />
                     <span className="text-sm font-medium text-orange-300">
                       Proprietary Mahindra Group Project - Technical details limited due to confidentiality

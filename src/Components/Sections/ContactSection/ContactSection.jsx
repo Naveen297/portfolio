@@ -8,7 +8,7 @@ import ContactForm from './ContactForm';
 // The main contact section component that assembles everything
 const ContactSection = () => {
     return (
-        <section className="overflow-hidden relative py-32 bg-gray-900 font-geormama">
+        <section className="relative py-32 overflow-hidden bg-gray-900 font-geormama">
             <div className="container px-6 mx-auto">
                 <motion.h2 
                     className="mb-12 text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 md:text-6xl [text-shadow:0_0_30px_rgba(168,85,247,0.5)]"
@@ -23,7 +23,7 @@ const ContactSection = () => {
                 <div className="grid gap-16 lg:grid-cols-2">
                     {/* Left Side: 3D Canvas and Contact Info Overlay */}
                     <motion.div
-                        className="overflow-hidden relative w-full h-96 rounded-2xl border border-gray-800 lg:h-full bg-black/50 group"
+                        className="relative w-full overflow-hidden border border-gray-800 h-96 rounded-2xl lg:h-full bg-black/50 group"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -56,9 +56,9 @@ const ContactSection = () => {
 
 // Sub-component for the contact info that appears on hover
 const ContactInfoOverlay = () => (
-    <div className="flex absolute inset-0 flex-col justify-center items-center p-8 bg-gradient-to-br opacity-0 backdrop-blur-xl transition-all duration-700 group-hover:opacity-100 from-black/80 via-gray-900/90 to-black/80">
+    <div className="absolute inset-0 flex flex-col items-center justify-center p-8 transition-all duration-700 opacity-0 bg-gradient-to-br backdrop-blur-xl group-hover:opacity-100 from-black/80 via-gray-900/90 to-black/80">
         <motion.div 
-            className="space-y-6 max-w-md text-center"
+            className="max-w-md space-y-6 text-center"
             initial={{ scale: 0.8, opacity: 0, rotateY: -15 }}
             whileInView={{ scale: 1, opacity: 1, rotateY: 0 }}
             transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 100 }}
@@ -99,25 +99,25 @@ const ContactCard = ({ icon, title, value, href, color, delay }) => (
 // Hint for user interaction
 const InteractionHint = () => (
     <motion.div 
-        className="p-4 mt-8 bg-gradient-to-r rounded-lg border backdrop-blur-md from-yellow-500/10 to-orange-500/10 border-yellow-400/20"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
+        // className="p-4 mt-8 border rounded-lg bg-gradient-to-r backdrop-blur-md from-yellow-500/10 to-orange-500/10 border-yellow-400/20"
+        // initial={{ opacity: 0, y: 20 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ delay: 0.8 }}
     >
-        <div className="flex gap-2 justify-center items-center mb-2">
+        {/* <div className="flex items-center justify-center gap-2 mb-2">
             <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold tracking-wide text-yellow-400 uppercase">Interactive 3D</span>
             <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
         </div>
-        <p className="text-sm text-gray-300">Move your cursor to interact with the scene</p>
+        <p className="text-sm text-gray-300">Move your cursor to interact with the scene</p> */}
     </motion.div>
 );
 
 // Corner labels for the canvas
 const CornerTechLabels = () => (
     <>
-        <div className="absolute top-4 left-4 px-3 py-1 font-mono text-xs text-cyan-400 rounded-full border bg-black/50 border-cyan-500/30">Three.js + R3F</div>
-        <div className="absolute right-4 bottom-4 px-3 py-1 font-mono text-xs text-purple-400 rounded-full border bg-black/50 border-purple-500/30">Interactive 3D</div>
+        <div className="absolute px-3 py-1 font-mono text-xs border rounded-full top-4 left-4 text-cyan-400 bg-black/50 border-cyan-500/30">Three.js + R3F</div>
+        <div className="absolute px-3 py-1 font-mono text-xs text-purple-400 border rounded-full right-4 bottom-4 bg-black/50 border-purple-500/30">Interactive 3D</div>
     </>
 );
 
@@ -133,32 +133,28 @@ const TechStackDisplay = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
         >
             <p className="mb-4 text-sm text-gray-500">Powered by cutting-edge technology</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-                {technologies.map((tech, index) => (
-                    <motion.span
-                        key={tech}
-                        className="px-3 py-1 font-mono text-xs text-cyan-400 rounded-full border bg-gray-800/50 border-cyan-500/30"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        whileHover={{ scale: 1.1, y: -2 }}
-                    >
-                        {tech}
-                    </motion.span>
-                ))}
-            </div>
+<div className="flex flex-wrap justify-center gap-4">
+    {technologies.map((tech, index) => (
+        <motion.span
+            key={tech}
+            className="px-3 py-1 font-mono text-xs border rounded-full text-cyan-400 bg-gray-800/50 border-cyan-500/30"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }} // This remains for the initial stagger animation
+            
+            // Apply a faster, specific transition just for the hover effect
+            whileHover={{ 
+                scale: 1.1, 
+                y: -2, 
+                transition: { type: 'tween', duration: 0.2, ease: 'easeOut' } 
+            }}
+        >
+            {tech}
+        </motion.span>
+    ))}
+</div>
         </motion.div>
     );
 };
-
-// Add some dynamic CSS variables for the hover effect colors. 
-// This should be in your global CSS file.
-/*
-:root {
-  --cyan-rgb: 6, 182, 212;
-  --purple-rgb: 168, 85, 247;
-  --green-rgb: 34, 197, 94;
-}
-*/
 
 export default ContactSection;
