@@ -12,15 +12,22 @@ const Navigation = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen 
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
-    // For sections on the main page, we still want to scroll
-    if (scrollToSection && sectionId.startsWith('#')) {
-      // We need to navigate to home first if we are on another page
-      if (location.pathname !== '/') {
-         window.location.href = `/${sectionId}`;
+    
+    // Handle section scrolling (for links with #)
+    if (sectionId.startsWith('#')) {
+      const targetSection = sectionId.substring(1);
+      
+      // If we're on the home page, scroll to the section
+      if (location.pathname === '/') {
+        if (scrollToSection) {
+          scrollToSection(targetSection);
+        }
       } else {
-        scrollToSection(sectionId.substring(1));
+        // If we're on another page, navigate to home with the section
+        window.location.href = `/${sectionId}`;
       }
     }
+    // For non-section links, React Router will handle the navigation automatically
   };
 
   const navItems = [

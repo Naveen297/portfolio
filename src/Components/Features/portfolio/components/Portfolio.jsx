@@ -49,7 +49,7 @@ const Portfolio = () => {
   };
 
   // --- NEW: Intersection observers to track which section is in view ---
-  const observerOptions = { threshold: 0.3, rootMargin: "-50px 0px -50px 0px" };
+  const observerOptions = { threshold: 0.2, rootMargin: "-80px 0px -80px 0px" };
   const { ref: homeViewRef, inView: homeInView } = useInView(observerOptions);
   const { ref: aboutViewRef, inView: aboutInView } = useInView(observerOptions);
   const { ref: experienceViewRef, inView: experienceInView } = useInView(observerOptions);
@@ -181,7 +181,7 @@ const Portfolio = () => {
         <AboutSection />
       </div>
       <div ref={setExperienceRef} id="experience">
-        <ExperienceSection />
+        <ExperienceSection ref={setExperienceRef}/>
       </div>
       <div ref={setProjectsRef} id="projects">
         <ProjectsSection />

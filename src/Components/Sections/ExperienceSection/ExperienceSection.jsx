@@ -1,6 +1,6 @@
 // src/Sections/ExperienceSection/index.jsx
 
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef,forwardRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,7 +14,7 @@ import TechShowcase from './TechShowcase';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ExperienceSection = () => {
+const ExperienceSection = forwardRef((props, ref) => {
   const sectionRef = useRef(null);
   const timelineRef = useRef(null);
 
@@ -100,6 +100,6 @@ const ExperienceSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ExperienceSection;
