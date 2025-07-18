@@ -130,7 +130,7 @@ const Portfolio = () => {
 
   // Loading timer
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1500);
+    const timer = setTimeout(() => setIsLoading(false), 4000); // Changed from 1500ms to 5000ms
     return () => clearTimeout(timer);
   }, []);
 
@@ -156,11 +156,11 @@ const Portfolio = () => {
   }
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+    <div className="overflow-x-hidden relative min-h-screen text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       {/* Simplified background elements */}
-      <div className="fixed inset-0 overflow-hidden opacity-50 pointer-events-none">
-        <div className="absolute rounded-full -top-40 -right-40 w-80 h-80 bg-gradient-to-br blur-3xl from-cyan-500/20 to-blue-500/20"></div>
-        <div className="absolute rounded-full -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br blur-3xl from-purple-500/20 to-pink-500/20"></div>
+      <div className="overflow-hidden fixed inset-0 opacity-50 pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br rounded-full blur-3xl from-cyan-500/20 to-blue-500/20"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br rounded-full blur-3xl from-purple-500/20 to-pink-500/20"></div>
       </div>
 
       <Navigation 
