@@ -282,7 +282,7 @@ const ExperienceSection = () => {
         gradient: "from-purple-500 to-pink-600"
       },
       {
-        category: "Cloud & DevOps",
+        category: "Cloud Tech.",
         skills: ["Google Cloud Platform", "CI/CD Pipelines", "Docker", "Jenkins"],
         level: "Advanced",
         icon: Globe,

@@ -72,7 +72,7 @@ export const SECTION_CONSTANTS = {
       ]
     },
     cloud: {
-      title: 'Cloud & DevOps',
+      title: 'Cloud Tech.',
       icon: 'Cloud',
       gradient: 'from-orange-500 to-yellow-600',
       color: 'text-orange-400',

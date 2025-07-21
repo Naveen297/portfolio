@@ -1,27 +1,9 @@
-// src/components/Portfolio/ResumeChatbot.jsx
-// const GEMINI_API_KEY = 'AIzaSyAbyGY7fCoGSObeeUZE80OGfHJmhLNdNuw'; // Your API Key
-// ResumeChatbot.jsx – Single‑file, self‑contained component with upgraded UI/UX
-// -----------------------------------------------------------------------------
-//  ⓘ  Place this file anywhere in your React project and import it normally:
-//      import ResumeChatbot from "./ResumeChatbot";
-//
-//  • TailwindCSS v3+ and Framer‑Motion v11+ are expected to be installed.
-//  • No external CSS files needed – all styling is done with utility classes.
-//  • Re‑uses your existing resumeData object; adjust the import path as needed.
-// -----------------------------------------------------------------------------
 
 import React, { useState, useRef, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { motion, AnimatePresence } from "framer-motion";
 import { resumeData } from "./resumeData.js"; // ← update path if required
 
-/* -------------------------------------------------------------------------- */
-/*                              Gemini API Setup                              */
-/* -------------------------------------------------------------------------- */
-
-// ⚠️  SECURITY NOTE ---------------------------------------------------------
-// Hard‑coding API keys in the frontend is NOT recommended for production.
-// Replace with a secure serverless function / proxy in real deployments.
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 let model = null;
