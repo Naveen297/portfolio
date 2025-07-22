@@ -224,7 +224,7 @@ const LoadingScreen = () => {
 
         {/* Name with letter-by-letter animation */}
         <div className="absolute bottom-32 left-1/2 text-center transform -translate-x-1/2">
-          <div className="mb-4 text-4xl font-bold">
+          <div className="mb-4 text-2xl text-4xl font-bold whitespace-nowrap sm:text-3xl md:text-4xl">
             {['N', 'a', 'v', 'e', 'e', 'n', ' ', 'M', 'a', 'l', 'h', 'o', 't', 'r', 'a'].map((letter, index) => (
               <span
                 key={index}
