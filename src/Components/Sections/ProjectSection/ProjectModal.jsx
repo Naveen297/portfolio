@@ -56,7 +56,7 @@ const ProjectModal = ({ project, onClose }) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 font-geormama"
+        className="flex fixed inset-0 z-50 justify-center items-center p-4 font-geormama"
         onClick={onClose}
       >
         {/* Backdrop */}
@@ -75,7 +75,7 @@ const ProjectModal = ({ project, onClose }) => {
           
           <motion.button
             onClick={onClose}
-            className="absolute z-10 p-2 text-gray-400 transition-colors top-4 right-4 rounded-xl bg-gray-800/80 hover:text-white hover:bg-gray-700/80"
+            className="absolute top-4 right-4 z-10 p-2 text-gray-400 rounded-xl transition-colors bg-gray-800/80 hover:text-white hover:bg-gray-700/80"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -86,18 +86,18 @@ const ProjectModal = ({ project, onClose }) => {
           <motion.div variants={contentVariants} className="p-8 overflow-y-auto max-h-[calc(95vh-0.75rem)]">
             
             {/* Header Section */}
-            <motion.div variants={itemVariants} className="flex items-start gap-6 mb-8">
+            <motion.div variants={itemVariants} className="flex gap-6 items-start mb-8">
               <div className={`p-6 rounded-2xl bg-gradient-to-br ${project.gradient} shadow-lg`}>
                 <project.icon className="w-12 h-12 text-white" />
               </div>
               <div className="flex-1">
-                <div className="flex flex-wrap items-center gap-3 mb-2">
+                <div className="flex flex-wrap gap-3 items-center mb-2">
                   <h2 className="text-4xl font-bold text-white">{project.title}</h2>
                   <span className={`px-3 py-1 text-xs font-bold ${impactColors[project.impact]} bg-gray-800/50 rounded-full border border-current/30`}>
                     {project.impact}
                   </span>
                   {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold text-blue-300 transition-colors border rounded-full bg-blue-900/50 border-blue-500/30 hover:bg-blue-800/50">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex gap-2 items-center px-3 py-1 text-xs font-bold text-blue-300 rounded-full border transition-colors bg-blue-900/50 border-blue-500/30 hover:bg-blue-800/50">
                       <Globe className="w-3 h-3" /> Live Demo
                     </a>
                   )}
@@ -108,8 +108,8 @@ const ProjectModal = ({ project, onClose }) => {
                 {/* Key Metrics */}
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                   {project.keyMetrics?.map((metric) => (
-                    <motion.div variants={itemVariants} key={metric.label} className="p-4 border rounded-xl bg-gray-800/50 border-gray-600/30">
-                      <div className="flex items-center gap-2 mb-2">
+                    <motion.div variants={itemVariants} key={metric.label} className="p-4 rounded-xl border bg-gray-800/50 border-gray-600/30">
+                      <div className="flex gap-2 items-center mb-2">
                         <metric.icon className="w-5 h-5 text-cyan-400" />
                         <span className="text-xs text-gray-400">{metric.label}</span>
                       </div>
@@ -122,21 +122,21 @@ const ProjectModal = ({ project, onClose }) => {
             
             {/* Technology Stack */}
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="flex items-center gap-2 mb-4 text-xl font-semibold text-cyan-400"><Cpu className="w-5 h-5" />Technology Stack</h3>
+              <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400"><Cpu className="w-5 h-5" />Technology Stack</h3>
               <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                 {project.tech?.map((tech) => (
-                  <motion.div variants={itemVariants} key={tech} className="px-4 py-3 text-sm font-semibold text-center text-purple-200 border rounded-xl border-purple-700/50 bg-purple-900/30">{tech}</motion.div>
+                  <motion.div variants={itemVariants} key={tech} className="px-4 py-3 text-sm font-semibold text-center text-purple-200 rounded-xl border border-purple-700/50 bg-purple-900/30">{tech}</motion.div>
                 ))}
               </div>
             </motion.div>
 
             {/* Key Achievements */}
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="flex items-center gap-2 mb-4 text-xl font-semibold text-cyan-400"><Brain className="w-5 h-5" />Key Achievements</h3>
+              <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400"><Brain className="w-5 h-5" />Key Achievements</h3>
               <div className="grid gap-4">
                 {project.achievements?.map((achievement, i) => (
-                  <motion.div variants={itemVariants} key={i} className="flex items-start gap-4 p-4 text-gray-300 border rounded-xl border-gray-700/50 bg-gray-800/30">
-                    <div className="flex-shrink-0 p-2 border rounded-lg bg-yellow-900/30 border-yellow-700/30"><Zap className="w-4 h-4 text-yellow-400" /></div>
+                  <motion.div variants={itemVariants} key={i} className="flex gap-4 items-start p-4 text-gray-300 rounded-xl border border-gray-700/50 bg-gray-800/30">
+                    <div className="flex-shrink-0 p-2 rounded-lg border bg-yellow-900/30 border-yellow-700/30"><Zap className="w-4 h-4 text-yellow-400" /></div>
                     <span className="text-sm leading-relaxed">{achievement}</span>
                   </motion.div>
                 ))}
@@ -146,11 +146,11 @@ const ProjectModal = ({ project, onClose }) => {
             {/* Key Features */}
             {project.features && (
               <motion.div variants={itemVariants} className="mb-8">
-                <h3 className="flex items-center gap-2 mb-4 text-xl font-semibold text-cyan-400"><Star className="w-5 h-5" />Key Features</h3>
+                <h3 className="flex gap-2 items-center mb-4 text-xl font-semibold text-cyan-400"><Star className="w-5 h-5" />Key Features</h3>
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   {project.features.map((feature, i) => (
-                    <motion.div variants={itemVariants} key={i} className="flex items-center gap-3 p-3 border rounded-xl bg-gray-800/30 border-gray-700/50">
-                      <div className="flex-shrink-0 p-2 border rounded-lg bg-green-900/30 border-green-700/30"><CheckCircle className="w-4 h-4 text-green-400" /></div>
+                    <motion.div variants={itemVariants} key={i} className="flex gap-3 items-center p-3 rounded-xl border bg-gray-800/30 border-gray-700/50">
+                      <div className="flex-shrink-0 p-2 rounded-lg border bg-green-900/30 border-green-700/30"><CheckCircle className="w-4 h-4 text-green-400" /></div>
                       <span className="text-sm text-gray-300">{feature}</span>
                     </motion.div>
                   ))}
