@@ -257,10 +257,10 @@ const TechStackGrid = ({ titleRef, gridRef, titleInView, gridInView, data }) => 
       >
         Current Tech Battlefield
       </h3>
-      <ViewToggle
+      {/* <ViewToggle
         isRadar={isRadarView}
         onToggle={setIsRadarView}
-      />
+      /> */}
       <div
         ref={gridRef}
         className={`transition-all duration-700 ease-out ${gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
